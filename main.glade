@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.2 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkApplicationWindow" id="main_window">
+    <property name="can_focus">False</property>
+    <property name="events">GDK_LEAVE_NOTIFY_MASK | GDK_PROPERTY_CHANGE_MASK</property>
+    <property name="title" translatable="yes">main windows</property>
+    <signal name="destroy" handler="on_window_destroy" swapped="no"/>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkMenuBar" id="ID_MENUBAR">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_File</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_NEW">
+                        <property name="label">gtk-new</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_new_file" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_OPEN">
+                        <property name="label">gtk-open</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_open_file" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_SAVE">
+                        <property name="label">gtk-save</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_save_file" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_SAVE_AS">
+                        <property name="label">gtk-save-as</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_save_as_file" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_EXPORT">
+                        <property name="label" translatable="yes">_Export to PNG</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="m_export_file" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_PRINT">
+                        <property name="label">gtk-print</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_print_file" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_FEATURES">
+                        <property name="label">gtk-properties</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_features_file" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_QUIT">
+                        <property name="label">gtk-quit</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="on_window_destroy" swapped="no"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_Edit</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_UNDO">
+                        <property name="label">gtk-undo</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_undo_edit" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_REDO">
+                        <property name="label">gtk-redo</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_redo_edit" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_INVERT">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Invert palette</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_invert_edit" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_PASTE">
+                        <property name="label">gtk-paste</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Slide</property>
+                        <property name="use_underline">True</property>
+                        <child type="submenu">
+                          <object class="GtkMenu">
+                            <property name="name">Slide</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="tearoff_title">Slide</property>
+                            <child>
+                              <object class="GtkMenuItem" id="IDM_ROTATE_LEFT">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Slide l_eft</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="m_rotate_left" swapped="no"/>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkMenuItem" id="IDM_ROTATE_RIGHT">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Slide _right</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="m_rotate_right" swapped="no"/>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkMenuItem" id="IDM_ROTATE_UP">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Slide _up</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="m_rotate_up" swapped="no"/>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkMenuItem" id="IDM_ROTATE_DOWN">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Slide _down</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="m_rotate_down" swapped="no"/>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Clear</property>
+                        <property name="use_underline">True</property>
+                        <child type="submenu">
+                          <object class="GtkMenu">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="tearoff_title">Clear</property>
+                            <child>
+                              <object class="GtkMenuItem" id="IDM_CLEAR_PUZZLE">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Clear _Puzzle</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="m_clear_puzzle" swapped="no"/>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkMenuItem" id="IDM_CLEAR_DIGITS">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Clear _Digits</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="m_clear_digits" swapped="no"/>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkMenuItem" id="IDM_CLEAR_PUZ_MARK">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Clear p_uzzle markers</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="m_clear_puzzle_mark" swapped="no"/>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkMenuItem" id="IDM_CLEAR_DIG_MARK">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Clear d_igits marker</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="m_clear_digit_mark" swapped="no"/>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_PROPERTIS">
+                        <property name="label">gtk-preferences</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_property_edit" swapped="no"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_View</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_MORE">
+                        <property name="label">gtk-zoom-in</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_more_view" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_LESS">
+                        <property name="label">gtk-zoom-out</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_less_view" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_NORMAL">
+                        <property name="label">gtk-zoom-100</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_norm_view" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckMenuItem" id="IDM_TOOLBAR">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Toolbar</property>
+                        <property name="use_underline">True</property>
+                        <property name="active">True</property>
+                        <signal name="toggled" handler="m_toolbar" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckMenuItem" id="IDM_STATUSBAR">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Statusbar</property>
+                        <property name="use_underline">True</property>
+                        <property name="active">True</property>
+                        <signal name="toggled" handler="m_statusbar" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckMenuItem" id="IDM_PALETTE">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Palette</property>
+                        <property name="use_underline">True</property>
+                        <signal name="toggled" handler="m_palette" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckMenuItem" id="IDM_GRID">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Grid</property>
+                        <property name="use_underline">True</property>
+                        <property name="active">True</property>
+                        <signal name="toggled" handler="m_grid" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckMenuItem" id="IDM_GRID5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Gr_id 5x5</property>
+                        <property name="use_underline">True</property>
+                        <property name="active">True</property>
+                        <signal name="toggled" handler="m_grid_5" swapped="no"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_Puzzle</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_SOLVE">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Solve puzzle</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_solve" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_CALC_DIG">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Calculate digits</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_calc_digit" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_MAKE_OVERLAPPED">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Make overlapped</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_make_overlap" swapped="no"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_Settings</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkCheckMenuItem" id="IDM_ANIMATE">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes" context="_Анимация" comments="Анимация при решении">_Animate</property>
+                        <property name="use_underline">True</property>
+                        <property name="active">True</property>
+                        <signal name="toggled" handler="m_animate" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckMenuItem" id="IDM_LESSON">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes" context="Режим обучения" comments="Режим обучения">_lesson (step by step)</property>
+                        <property name="use_underline">True</property>
+                        <signal name="toggled" handler="m_lesson" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckMenuItem" id="IDM_VNAME">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_View name</property>
+                        <property name="use_underline">True</property>
+                        <property name="active">True</property>
+                        <signal name="toggled" handler="m_vname" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkRadioMenuItem" id="IDM_HELP_0">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="has_default">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="events">GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK</property>
+                        <property name="label" translatable="yes">manual solved</property>
+                        <property name="use_underline">True</property>
+                        <property name="active">True</property>
+                        <property name="draw_as_radio">True</property>
+                        <signal name="group-changed" handler="m_help_level_0" after="yes" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkRadioMenuItem" id="IDM_HELP_1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="events">GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK</property>
+                        <property name="label" translatable="yes">automark digits</property>
+                        <property name="draw_as_radio">True</property>
+                        <property name="group">IDM_HELP_0</property>
+                        <signal name="group-changed" handler="m_help_level_1" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkRadioMenuItem" id="IDM_HELP_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="events">GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK</property>
+                        <property name="label" translatable="yes">automark lines</property>
+                        <property name="use_underline">True</property>
+                        <property name="draw_as_radio">True</property>
+                        <property name="group">IDM_HELP_0</property>
+                        <signal name="group-changed" handler="m_help_level_2" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkRadioMenuItem" id="IDM_HELP_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="events">GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK</property>
+                        <property name="label" translatable="yes">advanced help</property>
+                        <property name="use_underline">True</property>
+                        <property name="draw_as_radio">True</property>
+                        <property name="group">IDM_HELP_0</property>
+                        <signal name="group-changed" handler="m_help_level_3" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkRadioMenuItem" id="IDM_HELP_4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="events">GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK</property>
+                        <property name="label" translatable="yes">persuasive mode</property>
+                        <property name="use_underline">True</property>
+                        <property name="draw_as_radio">True</property>
+                        <property name="group">IDM_HELP_0</property>
+                        <signal name="group-changed" handler="m_help_level_4" swapped="no"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_Library</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_LOAD_RANDOM">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Open random black nanogramm</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_load_random" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_LOAD_RANDOM_C">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Open random color nanogramm</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_load_random_color" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_SEARCH_IN_LIBRARY">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Find</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_search_in_lib" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_DEMO_START">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Demo</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_demo" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_LIBRARY_NEXT">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Next</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_library_next" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_LIBRARY_PREV">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Prev</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_library_prev" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_HTTP_OPEN">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Open_URL</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_open_url" swapped="no"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_Help</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="IDM_ABOUT">
+                        <property name="label">gtk-about</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="m_about" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="IDM_HELP">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Help</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="m_help" swapped="no"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkToolbar" id="IDT_TOOLBAR">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <property name="toolbar_style">both</property>
+                <child>
+                  <object class="GtkToolButton" id="IDT_UNDO">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">undo last move</property>
+                    <property name="label" translatable="yes">Undo</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-undo</property>
+                    <signal name="clicked" handler="m_undo_edit" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="IDT_REDO">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">redo prev move</property>
+                    <property name="label" translatable="yes">Redo</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-redo</property>
+                    <signal name="clicked" handler="m_redo_edit" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="IDT_SOLVE">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">to solve a nanogramm</property>
+                    <property name="label" translatable="yes">Solve</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-edit</property>
+                    <signal name="clicked" handler="m_solve" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="IDT_CALC_DIG">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">to count a matrix</property>
+                    <property name="label" translatable="yes">Counts</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-file</property>
+                    <signal name="clicked" handler="m_calc_digit" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="IDT_CLEAR_PUZZLE">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">clear matrix</property>
+                    <property name="label" translatable="yes">Clear</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-clear</property>
+                    <signal name="clicked" handler="m_clear_puzzle" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioToolButton" id="IDT_PEN_PAINT">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">Painting pen</property>
+                    <property name="label" translatable="yes">Pen</property>
+                    <property name="use_underline">True</property>
+                    <property name="icon_name">xfce-graphics</property>
+                    <property name="active">True</property>
+                    <signal name="toggled" handler="m_paint_pen" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioToolButton" id="IDT_RECT_PAINT">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">Painting rectangles</property>
+                    <property name="label" translatable="yes">Rectangle</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-fullscreen</property>
+                    <property name="group">IDT_PEN_PAINT</property>
+                    <signal name="toggled" handler="m_paint_rectangle" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioToolButton" id="IDT_FILL_PAINT">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">Filling place</property>
+                    <property name="label" translatable="yes">Fill</property>
+                    <property name="use_underline">True</property>
+                    <property name="group">IDT_PEN_PAINT</property>
+                    <signal name="toggled" handler="m_paint_filling" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToggleToolButton" id="IDT_GRID">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">Greed cells</property>
+                    <property name="label" translatable="yes">Grid</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-close</property>
+                    <signal name="toggled" handler="m_grid_button_press" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToggleToolButton" id="IDT_GRID5">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">5x bold grid</property>
+                    <property name="label" translatable="yes">5x5</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-add</property>
+                    <signal name="toggled" handler="m_grid5_button_press" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToggleToolButton" id="IDT_PALETTE">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">Show palette</property>
+                    <property name="label" translatable="yes">Palette</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-select-color</property>
+                    <signal name="toggled" handler="m_palette_button" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="ID_SCROLLED">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="shadow_type">in</property>
+                <child>
+                  <object class="GtkViewport">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkDrawingArea" id="ID_DRAW_AREA">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_BUTTON_MOTION_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON2_MOTION_MASK | GDK_BUTTON3_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_SCROLL_MASK</property>
+                        <signal name="button-press-event" handler="button_press" swapped="no"/>
+                        <signal name="button-release-event" handler="button_release" swapped="no"/>
+                        <signal name="draw" handler="draw" swapped="no"/>
+                        <signal name="key-press-event" handler="key_press" swapped="no"/>
+                        <signal name="motion-notify-event" handler="m_mouse_motion" swapped="no"/>
+                        <signal name="scroll-event" handler="scroll_event" swapped="yes"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStatusbar" id="ID_STATUSBAR">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_start">10</property>
+            <property name="margin_end">10</property>
+            <property name="margin_top">6</property>
+            <property name="margin_bottom">6</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">2</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
